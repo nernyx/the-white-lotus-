@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The White Lotus – Massage & Healing Sanctuary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #f8fbfa 0%, #f0f7f5 100%);
+      color: #2d4a4a;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #e8f3ef 0%, #d1e5e0 100%);
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.1"><path d="M30,30 Q50,10 70,30 T90,30" stroke="%232a4a4a" fill="none" stroke-width="2"/></svg>');
+      background-size: 200px 200px;
+    }
+
+    .logo-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 25px;
+      border-radius: 50%;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(42, 74, 74, 0.1);
+      border: 2px solid #d1e5e0;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 500;
+      color: #2a4a4a;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .tagline {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: #7aa8a0;
+      margin-bottom: 10px;
+    }
+
+    .established {
+      font-style: italic;
+      color: #6a8a85;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .section:nth-child(even) {
+      background: linear-gradient(135deg, #f0f7f5 0%, #e8f3ef 100%);
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+      color: #3a5a5a;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #4a6a6a;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border: 1px solid #e0eae7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #7aa8a0, #d1e5e0);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #7aa8a0;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #3a5a5a;
+    }
+
+    .contact {
+      text-align: center;
+      background: linear-gradient(135deg, #2a4a4a 0%, #3a5a5a 100%);
+      color: white;
+      padding: 100px 0;
+    }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 35px;
+      border-radius: 50px;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      border: 2px solid transparent;
+    }
+
+    .phone-btn {
+      background: linear-gradient(135deg, #7aa8a0, #5c8c82);
+    }
+
+    .instagram-btn {
+      background: linear-gradient(135deg, #e1306c, #c13584);
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: #1a3a3a;
+      color: #a8c0ba;
+      font-size: 0.9rem;
+    }
+
+    .footer em {
+      display: block;
+      margin-top: 15px;
+      font-size: 0.8rem;
+      color: #8aa8a2;
+    }
+
+    .floating-element {
+      position: absolute;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .floating-1 {
+      top: 10%;
+      left: 5%;
+      font-size: 8rem;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .floating-2 {
+      bottom: 10%;
+      right: 5%;
+      font-size: 8rem;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #3a5a5a;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(135deg, #7aa8a0, #d1e5e0);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.5rem;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+      
+      .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .contact-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .floating-element {
+        display: none;
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="https://www.dropbox.com/scl/fi/bauz2q25e87q5is9xw4qt/qt-q_95.webp?rlkey=c0k44dx1uqc8toprzhzlo6pw6&st=stupe7ot&dl=1" alt="The White Lotus Logo" class="logo pulse" />
+        <h1>The White Lotus</h1>
+        <div class="tagline">Massage • Yoga • Energy Healing</div>
+        <div class="established">Serving Northern Utah since 2014</div>
+      </div>
+    </div>
+    <div class="floating-element floating-1">☯</div>
+    <div class="floating-element floating-2">♡</div>
+  </header>
+
+  <section class="section intro">
+    <div class="container">
+      <h2 class="fade-in">Feeling sore or tense?</h2>
+      <p class="fade-in">
+        If you've been hitting the gym, rock climbing, or just dealing with everyday stress,
+        you don't have to keep pushing through the pain. Keirshia Baker offers massage,
+        yoga, and healing work that helps your body loosen up, recover, and reset.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">💆‍♀️</div>
+          <h3>All massage modalities</h3>
+          <p>Professional therapeutic massage tailored to your needs</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">🧘‍♀️</div>
+          <h3>Specialty Yoga</h3>
+          <p>Private, group, or corporate sessions designed for you</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">🌬️</div>
+          <h3>Lifestyle Mentoring</h3>
+          <p>Breath & meditation coaching for holistic wellness</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">🎁</div>
+          <h3>Custom Crafts & Gifts</h3>
+          <p>Handcrafted items and personalized gift solutions</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">🎫</div>
+          <h3>Gift Vouchers</h3>
+          <p>The perfect present for loved ones seeking wellness</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">🚗</div>
+          <h3>Mobile Services</h3>
+          <p>Willing to travel to your preferred location</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <h2 class="fade-in">Begin Your Journey</h2>
+      <p class="fade-in" style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; opacity: 0.9;">
+        Ready to transform your well-being? Reach out to schedule your personalized session today.
+      </p>
+      <div class="contact-buttons">
+        <a href="tel:4352250570" class="contact-btn phone-btn fade-in">
+          <span style="font-size: 1.3rem;">📞</span>
+          Call / Text 435‑225‑0570
+        </a>
+        <a href="https://www.instagram.com/thewhitelotus333/?utm_source=ig_web_button_share_sheet" class="contact-btn instagram-btn fade-in">
+          <span style="font-size: 1.3rem;">💮</span>
+          Follow Our Journey
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    © The White Lotus • Massage & Healing<br><br>
+    <em>This website is the property of its rightful owner and is professionally monitored and maintained by Nernyx Corp.</em>
+  </div>
+
+  <script>
+    // Fade in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(el => observer.observe(el));
+    
+    // Add loading animation for logo
+    window.addEventListener('load', () => {
+      const logo = document.querySelector('.logo');
+      logo.style.transform = 'scale(1)';
+    });
+  </script>
+</body>
+</html>
